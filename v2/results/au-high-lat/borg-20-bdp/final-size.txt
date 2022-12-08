@@ -1,0 +1,38 @@
+Archive name: initial
+Archive fingerprint: 5f3ce9973eb482760b137213e34e917d08055fee15d7b8d2680af7388c65cbd5
+Comment: 
+Hostname: backuptest
+Username: root
+Time (start): Thu, 2022-12-08 11:06:57 -0500
+Time (end): Thu, 2022-12-08 11:28:14 -0500
+Duration: 21 minutes 17.22 seconds
+Command line: ./bin/borg-20 create --compression zstd initial corpa-1
+Number of files: 43904
+Original size: 9.59 GB
+Deduplicated size: 1.05 kB
+
+Archive name: second
+Archive fingerprint: 05515088d3775ae65d0276feceb6f5c1e8ef58f0aae34800995512a1aa161c80
+Comment: 
+Hostname: backuptest
+Username: root
+Time (start): Thu, 2022-12-08 11:28:23 -0500
+Time (end): Thu, 2022-12-08 11:30:47 -0500
+Duration: 2 minutes 23.89 seconds
+Command line: ./bin/borg-20 create --compression zstd second corpa-1 corpa-2
+Number of files: 43905
+Original size: 20.90 GB
+Deduplicated size: 11.30 GB
+
+Archive name: third
+Archive fingerprint: 5c8b7ad177fb20535f21cff83668d1423a6c3fbfad61cc8e9180576837b455f6
+Comment: 
+Hostname: backuptest
+Username: root
+Time (start): Thu, 2022-12-08 11:30:56 -0500
+Time (end): Thu, 2022-12-08 11:31:09 -0500
+Duration: 13.31 seconds
+Command line: ./bin/borg-20 create --compression zstd third corpa-1
+Number of files: 43904
+Original size: 9.59 GB
+Deduplicated size: 1.05 kB

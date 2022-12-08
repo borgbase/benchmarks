@@ -1,0 +1,11 @@
+Repository ID: 0aa8fe2e45dad2fb6d697dff37956cb907c552638c18d8e9079c3efc1363bee8
+Location: ssh://lx2sm0gt@lx2sm0gt.repo.borgbase.com/./repo
+Encrypted: Yes (repokey BLAKE2b)
+Cache: /root/.cache/borg/0aa8fe2e45dad2fb6d697dff37956cb907c552638c18d8e9079c3efc1363bee8
+Security dir: /root/.config/borg/security/0aa8fe2e45dad2fb6d697dff37956cb907c552638c18d8e9079c3efc1363bee8
+------------------------------------------------------------------------------
+                       Original size      Compressed size    Deduplicated size
+All archives:               40.08 GB             29.19 GB             10.16 GB
+
+                       Unique chunks         Total chunks
+Chunk index:                   49316               140073

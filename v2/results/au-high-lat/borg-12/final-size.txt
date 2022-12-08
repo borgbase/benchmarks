@@ -1,0 +1,11 @@
+Repository ID: c2f85dad5ae71506cef627c7ba0002fdef1d16bed3e611d05e7db86edb7bd3bc
+Location: ssh://n7fsscx0@n7fsscx0.repo.borgbase.com/./repo
+Encrypted: Yes (repokey BLAKE2b)
+Cache: /root/.cache/borg/c2f85dad5ae71506cef627c7ba0002fdef1d16bed3e611d05e7db86edb7bd3bc
+Security dir: /root/.config/borg/security/c2f85dad5ae71506cef627c7ba0002fdef1d16bed3e611d05e7db86edb7bd3bc
+------------------------------------------------------------------------------
+                       Original size      Compressed size    Deduplicated size
+All archives:               40.08 GB             29.19 GB             10.15 GB
+
+                       Unique chunks         Total chunks
+Chunk index:                   49266               139995
