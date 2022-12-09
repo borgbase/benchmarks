@@ -12,12 +12,12 @@
 - Borg 2.0 with Python 3.11 is about 5 to 20% faster on normal- and high latency connections, uses less CPU and about the same memory. The difference was smaller, when the focus was on compression.
 - CPU time is drastically lower for Borg 2.0. As much as 30%, unless more compression is involved.
 - Final backup size was the same for Borg 1.2 and 2.0, 10% more for Restic with default settings, when using the same Zstdandard compression.
-- Restic took 2-4x longer for new backups and took ~2x memory.
+- Restic took 2-4x longer for new backups and took ~2x memory. It's also reading and writing much more data than Borg.
 - Restic is slightly faster when no data has changed or on a high latency connection. The latter may be due to using 5 parallel upload connections.
 - Network optimizations to deal with high-bandwidth/high latency connections yielded only small speed improvements (BBR and BDP)
 - Results were relatively stable across multiple runs of the same scenario.
 
-![](v2/summary.jpg)
+![](v2/summary.png)
 
 Benchmark subjects:
 - "classic" Borg on older Python: [Github](https://github.com/borgbackup/borg/releases/download/1.2.2/borg-linux64)
@@ -40,11 +40,13 @@ Methodology
     - subsequent backup with corpus part 2 added (create-2)
     - subsequent backup without new data (create-3)
     - pruning 50% (prune-1)
-- Measurements:
+- Measurements taken by [GNU Time](https://www.gnu.org/software/time/):
     - Time: wall clock
     - CPU usage: user time, system time
-    - Final backup size: GB
+    - Final backup size: in GB
     - Memory usage: max RSS
+    - File system inputs: Data read in blocks of 512 bytes
+    - File system outputs: Data written in blocks of 512 bytes
 
 Test Scenarios
 - normal latency: backup nearby server with connection in Germany, 25ms ping
@@ -57,9 +59,9 @@ Test machine setup
 - OS: Debian GNU/Linux 11 (bullseye)
 - Initial setup steps:
     ```
-    apt update && apt install -y tmux time rsync
-    echo 'StrictHostKeyChecking accept-new' > ~/.ssh/config
+    apt update && apt install -y tmux time rsync nload ncdu
     ssh-keygen -o -a 100 -t ed25519
+    echo 'StrictHostKeyChecking accept-new' > ~/.ssh/config
     ```
 
 Test commands
