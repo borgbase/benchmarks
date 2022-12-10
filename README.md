@@ -79,6 +79,9 @@ test_borg-20
 test_restic-14
 ```
 
+### Feedback and shortcomings
+- [ ] Empty cache between runs to avoid seeing lower *Reads* due to OS-level caching: `sync; echo 3 > /proc/sys/vm/drop_caches` (Thanks to Michael from the [Restic forum](https://forum.restic.net/t/restic-benchmark-on-low-and-high-latency-connection/5701/2))
+
 
 ## Test v1 (Oct 2022)
 
